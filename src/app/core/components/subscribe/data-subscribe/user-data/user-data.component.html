@@ -1,0 +1,43 @@
+<div class="container-form-login">
+  <form [formGroup]="formUser" (ngSubmit)="logar()">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="Email">
+      <mat-error *ngIf="formUser.controls['Email'].errors?.['required']">campo obrigatório</mat-error>
+      <mat-error *ngIf="formUser.controls['Email'].errors?.['Email']">email inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="Password"  [type]="hidePassword ? 'password' : 'text'">
+      <p mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </p>
+      <mat-error *ngIf="formUser.controls['Password'].errors?.['required']">insira sua senha</mat-error>
+      <mat-error *ngIf="formUser.controls['Password'].errors?.['minlength']">caracteres insufisciente:
+        {{formUser.controls['Password'].errors?.['minlength']?.['actualLength']}}/
+        {{formUser.controls['Password'].errors?.['minlength']?.['requiredLength']}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Confirmação da senha</mat-label>
+      <input matInput formControlName="ConfirmPassword" [type]="hideConfirmPassword ? 'password' : 'text'">
+      <p mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+        <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </p>
+      <mat-error *ngIf="formUser.controls['ConfirmPassword'].errors?.['required']">insira sua senha</mat-error>
+      <mat-error *ngIf="formUser.controls['ConfirmPassword'].errors?.['mustMatch']">as senhas não correspondem</mat-error>
+      <mat-error *ngIf="formUser.controls['ConfirmPassword'].errors?.['minlength']">caracteres insufisciente:
+        {{formUser.controls['ConfirmPassword'].errors?.['minlength']?.['actualLength']}}/
+        {{formUser.controls['ConfirmPassword'].errors?.['minlength']?.['requiredLength']}}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="btn-actions-form">
+      <button mat-raised-button color="primary" type="submit" class="btn-submit">
+        PROSSEGUIR <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>

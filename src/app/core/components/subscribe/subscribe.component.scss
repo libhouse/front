@@ -1,0 +1,21 @@
+.card-resident{
+  float: left;
+}
+
+.card-owner{
+  float: right;
+}
+
+
+
+@media only screen and (max-device-width: 1000px){
+  .container-full-right{
+    display: none;
+  }
+  .container-full-left{
+    height: 100%;
+    width: 100%;
+    float: right;
+    background-color: rgb(255, 255, 255);
+  }
+}

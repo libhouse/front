@@ -1,0 +1,144 @@
+// Containers
+.container-login{
+  margin-top: 16rem;
+}
+
+//Botões
+.btn-submit{
+  width: 48%;
+}
+
+.btn-subscribe{
+  width: 48%;
+  background-color: #4F7DCA;
+  color: white;
+}
+
+.btn-login-right{
+  float: right;
+}
+
+.btn-login-left{
+  float: left;
+}
+
+.row{
+  margin-right: 0 !important;
+}
+
+.form-field{
+  display: block;
+  margin: 5% 0;
+}
+
+.title-login{
+  color: #5E16EB;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 15%;
+  width: 100%;
+}
+
+// Media width
+@media only screen and (max-device-width: 999px) {
+  .btn-submit{
+    width: 100%;
+  }
+  .btn-subscribe{
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #4F7DCA;
+    color: white;
+  }
+  .title-login{
+    color: #5E16EB;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 15%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 600px){
+  .container-full-left{
+    height: 100%;
+    width: 50%;
+    float: left;
+    display: none;
+  }
+
+  .btn-submit{
+    margin-bottom: 0.5rem;
+  }
+
+  .title-login{
+    display: none;
+  }
+
+  .container-full-right{
+    height: 100%;
+    width: 100%;
+    float: right;
+    background-color: rgb(255, 255, 255);
+  }
+  .title-login{
+    color: #5E16EB;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 249px){
+  .container-full-right{
+    height: 100%;
+    width: 100%;
+    float: right;
+    background-color: rgb(255, 255, 255);
+  }
+  .title-login{
+    color: #5E16EB;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15%;
+    width: 100%;
+  }
+  .btn-subscribe{
+    font-size: 0.6rem;
+  }
+  .btn-submit{
+    font-size: 0.6rem;
+  }
+}
+
+// Media heigth
+@media only screen and (max-device-height: 699px){
+  .container-login{
+    margin-top: 12rem;
+  }
+}
+
+@media only screen and (max-device-height: 550px){
+  .container-login{
+    margin-top: 8rem;
+  }
+}
+
+@media only screen and (max-device-height: 450px){
+  .container-login{
+    margin-top: 5rem;
+  }
+}
+
+@media only screen and (max-device-height: 380px){
+  .container-login{
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-device-height: 330px){
+  .container-login{
+    margin-top: 1rem;
+  }
+}

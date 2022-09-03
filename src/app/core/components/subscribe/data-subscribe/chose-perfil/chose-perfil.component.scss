@@ -1,0 +1,10 @@
+.row-cards{
+  padding-top: 5rem !important;
+}
+
+@media only screen and (max-device-width: 650px){
+  .col-6{
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+}

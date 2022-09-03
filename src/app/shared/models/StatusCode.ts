@@ -1,0 +1,12 @@
+export enum StatusCodeResponseRequestAPI{
+  OK = 200,
+  CREATED = 201,
+  ACCEPTED = 202,
+  NOCONTENT = 204,
+  BADREQUEST = 400,
+  UNAUTHORIZED = 401,
+  FORBIDEN = 403,
+  NOTFOUND = 404,
+  INTERNALERROR =501,
+  TIMOUT = 504
+}

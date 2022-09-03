@@ -1,0 +1,77 @@
+<div class="container-master-fullscreen">
+  <div class="container-full-left">
+    <img src="assets/img/img-logo.png" class="w-100 h-100" />
+  </div>
+
+  <div class="container-full-right">
+    <div class="d-flex justify-content-center">
+      <div
+        class="w-50 container-login"
+        *ngIf="showFormTemplate"
+      >
+        <h1 class="title-login">LOGIN</h1>
+        <form [formGroup]="formLogin" (ngSubmit)="logar()">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="formLogin.controls['email'].errors?.['required']"
+              >campo requerido</mat-error
+            >
+            <mat-error *ngIf="formLogin.controls['email'].errors?.['email']"
+              >email inválido</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field
+            appearance="fill"
+            class="form-field"
+            style="margin-bottom: 0"
+          >
+            <mat-label>Senha</mat-label>
+            <input matInput formControlName="password" type="password" />
+            <mat-error
+              *ngIf="formLogin.controls['password'].errors?.['required']"
+              >insira sua senha</mat-error
+            >
+            <mat-error
+              *ngIf="formLogin.controls['password'].errors?.['invalidPsw']"
+              > Senha Invalida </mat-error
+            >
+            <mat-error
+              *ngIf="formLogin.controls['password'].errors?.['minlength']"
+              >caracteres insufisciente:
+              {{formLogin.controls['password'].errors?.['minlength']?.['actualLength']
+              }}/
+              {{formLogin.controls['password'].errors?.['minlength']?.['requiredLength']}}
+            </mat-error>
+          </mat-form-field>
+          <mat-error *ngIf="errorReturn !== null">{{
+            errorReturn?.Message
+          }}</mat-error>
+          <div class="btn-actions-form">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              class="btn-submit btn-login-left"
+            >
+              ENTRAR
+            </button>
+            <button
+              mat-raised-button
+              (click)="redirectRoute('subscribe')"
+              class="btn-subscribe btn-login-right"
+            >
+              SE INSCREVER
+            </button>
+          </div>
+          <div class="w-100 mt-5">
+            <a href='/reset-password'>
+              <span class="float-end">esqueci minha senha </span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

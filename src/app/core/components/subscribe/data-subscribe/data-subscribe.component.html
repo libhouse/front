@@ -1,0 +1,24 @@
+<h2 class="title-subscribe">CADASTRO</h2>
+<div class="container-subscribe-infos">
+  <mat-stepper #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Perfil</ng-template>
+      <app-chose-perfil
+        (proximaEtapaOut)="proximaEtapa($event)"
+      ></app-chose-perfil>
+    </mat-step>
+    <mat-step class="pt-5">
+      <ng-template matStepLabel>Dados do usuário</ng-template>
+      <app-user-data
+        class="mt-5"
+        (proximo)="proximaEtapa($event)"
+      ></app-user-data>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Dados pessoais</ng-template>
+      <app-personal-data
+        (proximo)="proximaEtapa($event)"
+      ></app-personal-data>
+    </mat-step>
+  </mat-stepper>
+</div>

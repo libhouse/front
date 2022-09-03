@@ -1,0 +1,22 @@
+<div class="w-75 mx-auto">
+  <div class="row-cards row">
+    <div class="col-6">
+      <app-card-option-subscribe
+      textCard="MORADOR"
+      src="assets/img/img-morador.png"
+      class="card-resident"
+      (avancarEtapa)="proximaEtapa($event)"
+      >
+    </app-card-option-subscribe>
+    </div>
+    <div class="col-6">
+      <app-card-option-subscribe
+      textCard="PROPRIETARIO"
+      src="assets/img/img-proprietario.png"
+      class="card-resident"
+      (avancarEtapa)="proximaEtapa($event)"
+      >
+    </app-card-option-subscribe>
+    </div>
+  </div>
+</div>

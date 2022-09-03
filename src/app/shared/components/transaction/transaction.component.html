@@ -1,0 +1,9 @@
+<div id="snakebar" *ngIf="show$ | async"
+  [ngClass]="[template$ | async, (show$ | async) ? 'show': '']"
+>
+<div class="d-flex align-items-stretch justify-content-center">
+  <div class="p-2 bd-highlight"><mat-icon>{{icon$ | async}}</mat-icon></div>
+  <div class="p-2 bd-highlight mt-2"><p class="float-right">{{message$ | async}}</p></div>
+  <div class="p-2 bd-highlight"></div>
+</div>
+</div>

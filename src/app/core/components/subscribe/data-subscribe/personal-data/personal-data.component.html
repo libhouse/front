@@ -1,0 +1,54 @@
+    <div class="container-form-login">
+      <form [formGroup]="formPersonal" (ngSubmit)="proximaEtapa()">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="Name">
+          <mat-error *ngIf="formPersonal.controls['Name'].errors?.['required']">campo obrigatório</mat-error>
+          <mat-error *ngIf="formPersonal.controls['Name'].errors?.['Name']">nome invalido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput formControlName="LastName">
+          <mat-error *ngIf="formPersonal.controls['LastName'].errors?.['required']">campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="BirthDate">
+          <mat-error *ngIf="formPersonal.controls['BirthDate'].errors?.['required']">campo obrigatório</mat-error>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Gênero</mat-label>
+          <mat-select formControlName="Gender">
+            <mat-option *ngFor="let gender of genders" [value]="gender.id">
+              {{gender.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formPersonal.controls['Gender'].errors?.['required']">campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Celular</mat-label>
+          <input matInput formControlName="Phone" mask="(00)00000-0000">
+          <mat-error *ngIf="formPersonal.controls['Phone'].errors?.['required']">campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="CPF" mask="000.000.000-00">
+          <mat-error *ngIf="formPersonal.controls['CPF'].errors?.['required']">campo obrigatório</mat-error>
+        </mat-form-field>
+        <div class="btn-actions-form">
+          <button matStepperNext mat-raised-button color="primary" type="submit" class="btn-submit">
+            CADASTRAR <mat-icon>arrow_forward</mat-icon>
+          </button>
+          <button mat-stroked-button color="primary" (click)="voltarHome()" class="btn-submit mt-2">
+            VOLTAR
+          </button>
+        </div>
+      </form>
+    </div>
