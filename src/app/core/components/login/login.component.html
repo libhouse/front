@@ -12,7 +12,7 @@
         <h1 class="title-login">LOGIN</h1>
         <form [formGroup]="formLogin" (ngSubmit)="logar()">
           <mat-form-field appearance="fill" class="form-field">
-            <mat-label>LUCAOI</mat-label>
+            <mat-label>LOGIN</mat-label>
             <input matInput formControlName="email" />
             <mat-error *ngIf="formLogin.controls['email'].errors?.['required']"
               >campo requerido</mat-error

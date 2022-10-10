@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  API: 'https://localhost:5001/api/v1/',
+  production: true,
+  API: 'http://libhouseapi-dev.us-east-1.elasticbeanstalk.com/api/v1/',
   userSessionStorage: "auth-user",
   authToken: "auth-token"
 };
