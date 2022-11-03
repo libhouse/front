@@ -43,6 +43,13 @@ export class DataSubscribeComponent implements OnInit {
     if (!this.formSubscribe.valid) return;
     this.subscription.push(
       this.subscribeService.subscribe(this.formSubscribe.value)
-        .subscribe(resp => {}));
+        .subscribe({
+          next: resp => {
+            this.httpHandlerResp.GetReturnAPIResult(200, null, 'Castro realizado com sucesso', '/login')
+          },
+          error: error => this.httpHandlerResp.GetReturnAPIResult(error.status, null,
+            'Opa! Ocorreu algum problema na hora de realizar seu cadastro, favor tentar novamente ou entrar em contato',
+            '/login')
+        }));
   }
 }
