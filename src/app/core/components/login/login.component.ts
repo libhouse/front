@@ -54,18 +54,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (this.formLogin.valid) {
       const { email, password } = this.formLogin.value;
       this.store.dispatch(Authentication({ payload: { email, password } }))
-
-      // this.subscription.push(
-      //   this.authService.authentication({ email, password })
-      //     .subscribe({
-      //       next: () => {
-      //         this.redirectRoute('/')
-      //       },
-      //       complete: () => { },
-      //       error: (err) => {
-      //         this.handlerResultApi.GetReturnAPIResult(err.status, null, null, null)
-      //       }
-      //     }));
     }
   }
 

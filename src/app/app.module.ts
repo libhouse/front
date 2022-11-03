@@ -29,7 +29,7 @@ import { environment } from 'src/environments/environment';
     SharedModule,
     StoreModule.forRoot({ auth: authReducer}),
     EffectsModule.forRoot([AuthEffects]),
-    StoreDevtoolsModule.instrument({logOnly: environment.production}),
+    !environment.production ? StoreDevtoolsModule.instrument({logOnly: true}) : []
   ],
   providers: [HandlerRequestApis,
     AuthInterceptor,
