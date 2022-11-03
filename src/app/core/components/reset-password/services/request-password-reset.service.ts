@@ -12,7 +12,7 @@ export class RequestPasswordResetService {
   constructor(private http: HttpClient) { }
 
   requestPasswordReset(userCPF: RequestPasswordReset): Observable<boolean> {
-    return this.http.patch<boolean>(`${environment.API}users/request-password-reset`, userCPF)
+    return this.http.post<boolean>(`${environment.API}users/request-password-reset`, userCPF)
   }
 
   resetPassword(resetPass: ResetPassword): Observable<any>{
