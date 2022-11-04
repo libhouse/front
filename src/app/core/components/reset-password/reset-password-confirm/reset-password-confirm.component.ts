@@ -44,8 +44,11 @@ export class ResetPasswordConfirmComponent implements OnInit {
           password: this.formRequestPasswordReset.value.Password,
           passwordResetToken: this.token,
           userEmail: this.email
-        }).subscribe(resp => {
-          this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.NOCONTENT, null, 'Senha alterada com sucesso!', 'login')
+        }).subscribe({
+          next: resp => {
+            this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.NOCONTENT, null, 'Senha alterada com sucesso!', '/login')
+        },
+        error: err => this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.BADREQUEST, null, 'Problema ao redefinir a senha', 'login')
         }))
     } else { }
   }
