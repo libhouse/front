@@ -48,7 +48,7 @@ export class ResetPasswordConfirmComponent implements OnInit {
           next: resp => {
             this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.NOCONTENT, null, 'Senha alterada com sucesso!', '/login')
         },
-        error: err => this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.BADREQUEST, null, 'Problema ao redefinir a senha', 'login')
+        error: err => this.httpHandlerResp.GetReturnAPIResult(StatusCodeResponseRequestAPI.BADREQUEST, null, 'Problema ao redefinir a senha', null)
         }))
     } else { }
   }
