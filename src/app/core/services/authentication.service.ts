@@ -26,7 +26,7 @@ export class AuthenticationService {
             this.userLogged$.next(true);
             this.userData = user;
             sessionStorage.setItem(`${environment.userSessionStorage}`, JSON.stringify(user));
-            this.router.navigate(["/subscribe"])
+            this.router.navigate(["/preferences"])
           }
         })
       );

@@ -38,9 +38,8 @@ export class AuthEffects {
   authenticationSuccess = createEffect(
     () => this.actions$.pipe(
       ofType(authActions.AuthenticationSuccess),
-      map((action: any) => action.payload),
-      tap(res => {})
-    ), {dispatch: false}
+      map((action: any) => action.payload)),
+      {dispatch: false}
   );
 
   authenticationFail = createEffect(

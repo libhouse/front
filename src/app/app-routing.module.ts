@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent, pathMatch: 'full' },
   { path: 'request-password-reset/:email/:userId/:token', component: ResetPasswordComponent, pathMatch: 'full' },
   { path: 'subscribe', component: SubscribeComponent, pathMatch: 'full' },
-  { path: 'user', loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
+  { path: 'user', loadChildren: () => import('./core/core.module').then(m => m.CoreModule), canActivate: [AuthenticationGuard]},
+  { path: 'preferences', loadChildren: () => import('./features/preferences/preferences.module').then(m => m.PreferencesModule), canActivate: [],},
   { path: '**', redirectTo: '/login' }
 ];
 

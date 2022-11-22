@@ -65,3 +65,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .btn-submit{
   width: 100%;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
