@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 import { PreferencesRoutingModule } from './preferences-routing.module';
 import { ResidentsPreferencesComponent } from './residents-preferences/residents-preferences.component';
+import { MenuPagesSysComponent } from 'src/app/shared/components/menu-pages-sys/menu-pages-sys.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +14,8 @@ import { ResidentsPreferencesComponent } from './residents-preferences/residents
   ],
   imports: [
     CommonModule,
-    PreferencesRoutingModule
+    PreferencesRoutingModule,
+    SharedModule
   ]
 })
 export class PreferencesModule { }

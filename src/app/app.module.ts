@@ -15,7 +15,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LoaderInterceptor } from './shared/interceptors/loader.interceptor';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { environment } from 'src/environments/environment';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StoreModule.forRoot({ auth: authReducer}),
     EffectsModule.forRoot([AuthEffects]),
     !environment.production ? StoreDevtoolsModule.instrument({logOnly: true}) : [],
-    NgbModule
   ],
   providers: [HandlerRequestApis,
     AuthInterceptor,
