@@ -12,8 +12,9 @@ const routes: Routes = [
   { path: 'login/:confirmSuccess', component: LoginComponent, pathMatch: 'full' },
   { path: 'reset-password', component: ResetPasswordComponent, pathMatch: 'full' },
   { path: 'request-password-reset/:email/:userId/:token', component: ResetPasswordComponent, pathMatch: 'full' },
-  { path: 'subscribe', component: SubscribeComponent, pathMatch: 'full' },
+  // { path: 'subscribe', component: SubscribeComponent, pathMatch: 'full' },
   { path: 'user', loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
+  { path: 'preference-user', loadChildren: () => import('./features/resident-preference/resident-preference.module').then(m => m.ResidentPreferenceModule)},
   { path: '**', redirectTo: '/login' }
 ];
 

@@ -53,25 +53,24 @@ export class LoginComponent implements OnInit, OnDestroy {
   logar() {
     if (this.formLogin.valid) {
       const { email, password } = this.formLogin.value;
+      console.log(email, password)
       this.store.dispatch(Authentication({ payload: { email, password } }))
     }
   }
 
   redirectRoute(route: string) {
+    console.log(route)
     this.router.navigateByUrl(route);
   }
 
   private getParamsRouteLogin(): void {
-    console.log("teste")
     this.subscription.push(
       this.activedRoute.paramMap
         .subscribe(paraMap => {
-          console.log(paraMap)
           this.UserEmail = paraMap.get('userEmail');
           this.ConfirmationToken = paraMap.get('tokenConfirmEmail');
           this.UserId = paraMap.get('userId');
           this.confirmSuccess = paraMap.get('confirmSuccess') === 'true' ? true : false;
-          console.log(this.UserEmail, this.ConfirmationToken, this.UserId, this.confirmSuccess)
           if (this.UserEmail && this.UserId && this.ConfirmationToken) {
             this.subscription.push(
               this.authService.emailConfirmation({ UserEmail: this.UserEmail, UserId: this.UserId, ConfirmationToken: this.ConfirmationToken })
